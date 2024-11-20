@@ -1,3 +1,3 @@
 module.exports = {
-    publicPath: '/Github-Insight-/',
+    publicPath: '/github-insight/',
   };
