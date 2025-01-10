@@ -1,5 +1,4 @@
 ## Vue js + tailwind css 
-
 ## Installation 
 
 ```bash
