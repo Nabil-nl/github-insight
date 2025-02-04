@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 @font-face {
     font-family: 'Font1';
     src: url('../assets/fonts/Uni Sans Heavy.otf') format('opentype');
   }
+
 .card {
     position: relative;
     width: 630px;
@@ -28,7 +30,7 @@
         backdrop-filter: blur(24px);
         border-radius: 10px;
         overflow: hidden;
-        font-family: 'Font1';
+        font-family: 'Work Sans';
         font-size: 35px;
         
     }
@@ -36,5 +38,5 @@
 
 
 #default-search , #searchResults , #add{
-  font-family: 'Font1';
+  font-family: 'Work Sans' ;
 }
