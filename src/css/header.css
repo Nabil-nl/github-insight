@@ -1,8 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-@font-face {
-    font-family: 'Font1';
-    src: url('../assets/fonts/Bold.otf') format('opentype');
-  }
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Lexend:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 .card {
     position: relative;
@@ -21,7 +17,7 @@
   
     .bg {
         position: absolute;
-        top: 8px;
+        top: 3px;
         left: 5px;
         width: 610px;
         height: 40px;
@@ -30,8 +26,8 @@
         backdrop-filter: blur(24px);
         border-radius: 10px;
         overflow: hidden;
-        font-family: 'Font1';
-        font-size: 35px;
+        font-family: "Rubik", serif;
+        font-size: 30px;
         
     }
   
