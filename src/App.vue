@@ -30,7 +30,8 @@
   
   <style>
   body{
-    background-color: #0D1821;
+    background-color: #ffffff;
+    
   }
   
   </style>
