@@ -1,32 +1,32 @@
 <template>
   <aside
-    class="Rectangle1 w-[300px] h-[730px] left-[2px] top-[6px] bg-[#0D1821] bg-opacity-99 rounded-[10px] border-4 border-[#87bcde] fixed">
+    class="Rectangle1 w-[300px] h-[730px] left-[2px] top-[6px]  bg-opacity-99 rounded-[10px] border-2 border-[#14213d] fixed">
     <div>
       <img id="1" class="nabil w-[187px] h-44 left-[50px] top-[40px] absolute rounded-full" :src="avatarUrl"
         alt="User Avatar" />
       <div id="2"
-        class="Nab w-[171px] h-[31px] left-[60px] top-[250px] absolute text-[#f0f4ef] text-[27px] font-normal">
+        class="Nab w-[171px] h-[31px] left-[60px] top-[250px] absolute text-[#000000] text-[27px] font-normal">
         {{ name || "Not provided" }}
       </div>
       <img id="17" class="Morocco1 w-[50px] h-[35px] left-[230px] top-[20px] absolute" :src="flagUrl" alt="Country Flag"
         v-if="flagUrl" />
       <div
-        class="Rectangle2 w-[280px] h-[180px] left-[6px] top-[340px] absolute bg-[#0D1821] rounded-[9px] border-4 border-[#87bcde] animate-border">
+        class="Rectangle2 w-[280px] h-[180px] left-[6px] top-[340px] absolute  rounded-[9px] border-2 border-[#14213d] animate-border">
       </div>
     </div>
     <div class="Group2 w-[245px] h-[150px] left-[77px] top-[360px] absolute">
-      <div class="PublicRepos w-[220px] h-[50px] left-0 top-[100px] absolute text-[#f0f4ef] text-[20px] font-normal">
+      <div class="PublicRepos w-[220px] h-[50px] left-0 top-[100px] absolute text-[#000000] text-[20px] font-normal">
         <span>Public Repos: <span>{{ publicRepos || "Not provided" }}</span></span>
       </div>
-      <div class="Following w-[220px] h-[50px] left-0 top-[50px] absolute text-[#f0f4ef] text-[20px] font-normal">
+      <div class="Following w-[220px] h-[50px] left-0 top-[50px] absolute text-[#000000] text-[20px] font-normal">
         <span>Following: <span>{{ following || "Not provided" }}</span></span>
       </div>
-      <div class="Followers w-[220px] h-[50px] left-0 top-0 absolute text-[#f0f4ef] text-[20px] font-normal">
+      <div class="Followers w-[220px] h-[50px] left-0 top-0 absolute text-[#000000] text-[20px] font-normal">
         <span>Followers: <span>{{ followers || "Not provided" }}</span></span>
       </div>
     </div>
     <div
-      class="MembershipYears w-[280px] h-[50px] border-4 border-[#87bcde] left-[6px] top-[450px] absolute rounded-[9px] text-[#f0f4ef] text-[20px] font-normal flex items-center justify-center">
+      class="MembershipYears w-[280px] h-[50px] border-2 border-[#14213d] left-[6px] top-[450px] absolute rounded-[9px] text-[#000000] text-[20px] font-normal flex items-center justify-center">
       <span>Membership: <span id="1000">{{ membershipYears }}</span> Years</span>
     </div>
   </aside>
