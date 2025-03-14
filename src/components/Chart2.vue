@@ -1,6 +1,6 @@
 <template>
     <div class="flex relative justify-end items-end top-12">
-      <div class="absolute w-[400px] h-[300px] bg-[#0D1821] rounded-lg border-4 border-[#87bcde] shadow-lg flex items-center justify-center top-4">
+      <div class="absolute w-[400px] h-[300px] bg-[#ffffff] rounded-lg border-2 border-[#14213d] shadow-lg flex items-center justify-center top-4">
         <canvas ref="pieChartCanvas"></canvas>
       </div>
     </div>
@@ -38,7 +38,7 @@
               legend: {
                 position: 'top',
                 labels: {
-                  color: '#ffffff', 
+                  color: '#000000', 
                 },
                 
               },

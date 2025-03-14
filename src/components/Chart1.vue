@@ -1,6 +1,6 @@
 <template>
     <div class="flex relative justify-start items-start top-12">
-      <div class="absolute w-[400px] h-[300px]  justify-center items-center bg-[#0D1821] rounded-lg border-4 border-[#87bcde] shadow-lg flex top-4">
+      <div class="absolute w-[400px] h-[300px]  justify-center items-center bg-[#ffffff] rounded-lg border-2 border-[#14213d] shadow-lg flex top-4">
         <canvas  ref="radarChart"></canvas>
       </div>
     </div>
@@ -57,7 +57,7 @@
               legend: {
                 position: 'top',
                 labels: {
-                  color: '#ffffff', 
+                  color: '#000000', 
                 },
               },
               tooltip: {

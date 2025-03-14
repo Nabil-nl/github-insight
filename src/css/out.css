@@ -22,7 +22,6 @@
   .Rectangle1::after {
     content: '';
     position: absolute;
-    background: #0D1821;
     inset: 5px;
     border-radius: 10px;
     z-index: 1; 
