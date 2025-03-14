@@ -2,7 +2,7 @@
 import { createStore } from 'vuex';
 import axios from 'axios';
 // Temporary GitHub Token for Testing
-const GITHUB_TOKEN = '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';
+const GITHUB_TOKEN = '';
 
 function getLanguageColor(lang) {
   const colors = {
