@@ -22,7 +22,6 @@
         width: 610px;
         height: 40px;
         z-index: 2;
-        background:  #0D1821;
         backdrop-filter: blur(24px);
         border-radius: 10px;
         overflow: hidden;
