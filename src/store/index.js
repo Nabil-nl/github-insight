@@ -1,7 +1,8 @@
 // store/index.js
 import { createStore } from 'vuex';
 import axios from 'axios';
-
+// Temporary GitHub Token for Testing
+const GITHUB_TOKEN = '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';
 
 function getLanguageColor(lang) {
   const colors = {
@@ -125,14 +126,20 @@ export default createStore({
   actions: {
     async fetchRepositories({ commit }, username) {
       try {
-        const response = await axios.get(`https://api.github.com/users/${username}/repos`);
+        // const response = await axios.get(`https://api.github.com/users/${username}/repos`);
+         const response = await axios.get(`https://api.github.com/users/${username}/repos`, {
+      headers: { Authorization: `token ${GITHUB_TOKEN}` }
+    });
         const repositories = response.data;
 
         // Aggregate language data for chart
         const languageData = {};
         const repositoryData = await Promise.all(
           repositories.map(async (repo) => {
-            const languagesResponse = await axios.get(repo.languages_url);
+            // const languagesResponse = await axios.get(repo.languages_url);
+             const languagesResponse = await axios.get(repo.languages_url, {
+          headers: { Authorization: `token ${GITHUB_TOKEN}` }
+        });
             const languages = languagesResponse.data;
 
             // Update language data
@@ -180,7 +187,10 @@ export default createStore({
     },
     async searchUsers({ commit }, query) {
       try {
-        const response = await axios.get(`https://api.github.com/search/users?q=${query}`);
+        // const response = await axios.get(`https://api.github.com/search/users?q=${query}`);
+        const response = await axios.get(`https://api.github.com/search/users?q=${query}`, {
+      headers: { Authorization: `token ${GITHUB_TOKEN}` }
+    });
         commit('setUsers', response.data.items);
       } catch (error) {
         console.error('Error searching users:', error);
@@ -188,7 +198,10 @@ export default createStore({
     },
     async fetchUserProfile({ commit }, username) {
       try {
-        const response = await axios.get(`https://api.github.com/users/${username}`);
+        // const response = await axios.get(`https://api.github.com/users/${username}`);
+        const response = await axios.get(`https://api.github.com/users/${username}`, {
+      headers: { Authorization: `token ${GITHUB_TOKEN}` }
+    });
         commit('setUserProfile', response.data);
       } catch (error) {
         console.error('Error fetching user profile:', error);
