@@ -1,8 +1,7 @@
 // store/index.js
 import { createStore } from 'vuex';
 import axios from 'axios';
-// Temporary GitHub Token for Testing
-const GITHUB_TOKEN = '';
+
 
 function getLanguageColor(lang) {
   const colors = {
@@ -126,10 +125,8 @@ export default createStore({
   actions: {
     async fetchRepositories({ commit }, username) {
       try {
-        // const response = await axios.get(`https://api.github.com/users/${username}/repos`);
-         const response = await axios.get(`https://api.github.com/users/${username}/repos`, {
-      headers: { Authorization: `token ${GITHUB_TOKEN}` }
-    });
+        const response = await axios.get(`https://api.github.com/users/${username}/repos`);
+ 
         const repositories = response.data;
 
         // Aggregate language data for chart
@@ -187,10 +184,8 @@ export default createStore({
     },
     async searchUsers({ commit }, query) {
       try {
-        // const response = await axios.get(`https://api.github.com/search/users?q=${query}`);
-        const response = await axios.get(`https://api.github.com/search/users?q=${query}`, {
-      headers: { Authorization: `token ${GITHUB_TOKEN}` }
-    });
+        const response = await axios.get(`https://api.github.com/search/users?q=${query}`);
+ 
         commit('setUsers', response.data.items);
       } catch (error) {
         console.error('Error searching users:', error);
@@ -198,10 +193,8 @@ export default createStore({
     },
     async fetchUserProfile({ commit }, username) {
       try {
-        // const response = await axios.get(`https://api.github.com/users/${username}`);
-        const response = await axios.get(`https://api.github.com/users/${username}`, {
-      headers: { Authorization: `token ${GITHUB_TOKEN}` }
-    });
+        const response = await axios.get(`https://api.github.com/users/${username}`);
+    
         commit('setUserProfile', response.data);
       } catch (error) {
         console.error('Error fetching user profile:', error);
