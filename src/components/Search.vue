@@ -26,8 +26,12 @@
               </li>
             </ul>
           </div>
-          <!-- Display message if no users are found -->
-          <div v-else class="p-4 text-red-500">No users found.</div>
+          <!-- Display loading message while searching -->
+          <div v-else-if="loading" class="p-4 text-[#00a8e8]">Wait..</div>
+          <!-- Display message if no users are found after search completes -->
+          <div v-else class="p-4 text-[#ff3333]">
+            I don't find the users
+          </div>
         </div>
       </div>
     </div>
@@ -72,18 +76,26 @@ export default {
       showUserList: true,
       currentCard: null,
       selectedUser: '',
+      loading: false,
     };
   },
   computed: {
     ...mapState(['users', 'repositories']),
   },
   methods: {
-    ...mapActions(['searchUsers', 'fetchRepositories', 'fetchUserProfile' , 'updateSidebarUser']),
-    performSearch() {
+    ...mapActions(['searchUsers', 'fetchRepositories', 'fetchUserProfile', 'updateSidebarUser']),
+    async performSearch() {
       this.searchPerformed = true;
-      this.debouncedSearch(this.query);
+      this.loading = true;
       this.showUserList = true;
       this.currentCard = null;
+      
+      try {
+        await this.debouncedSearch(this.query);
+      } finally {
+        // Set loading to false after search completes (whether successful or not)
+        this.loading = false;
+      }
     },
     async fetchUserRepos(username) {
       await this.fetchRepositories(username);
@@ -91,7 +103,7 @@ export default {
       this.selectedUser = username;
       this.showUserList = false;
       this.currentCard = 'repositories';
-       // Update the sidebar user
+      // Update the sidebar user
       this.updateSidebarUser(username);
     },
     showMoreRepositories() {
@@ -117,3 +129,4 @@ export default {
 <style scoped>
 /* Add your styles here */
 </style>
+
