@@ -27,7 +27,7 @@
         
         <!-- Status -->
         <div class="flex items-center justify-center space-x-2 text-sm text-slate-300">
-          <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+          <div class="w-2 h-2 bg-green-400 rounded-full"></div>
           <span>Active Developer</span>
         </div>
       </div>
