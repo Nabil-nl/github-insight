@@ -1,34 +1,86 @@
 <template>
-  <aside
-    class="Rectangle1 w-[300px] h-[730px] left-[2px] top-[6px]  bg-opacity-99 rounded-[10px] border-2 border-[#14213d] fixed">
-    <div>
-      <img id="1" class="nabil w-[187px] h-44 left-[50px] top-[40px] absolute rounded-full" :src="avatarUrl"
-        alt="User Avatar" />
-      <div id="2"
-        class="Nab w-[171px] h-[31px] left-[60px] top-[250px] absolute text-[#000000] text-[27px] font-normal">
-        {{ name || "Not provided" }}
-      </div>
-      <img id="17" class="Morocco1 w-[50px] h-[35px] left-[230px] top-[20px] absolute" :src="flagUrl" alt="Country Flag"
-        v-if="flagUrl" />
-      <div
-        class="Rectangle2 w-[280px] h-[180px] left-[6px] top-[340px] absolute  rounded-[9px] border-2 border-[#14213d] animate-border">
+  <aside class="w-80 h-full bg-slate-900 border-r border-slate-700 flex flex-col overflow-y-auto">
+    <!-- Header Card -->
+    <div class="m-4 bg-slate-800 rounded-lg border border-slate-700 p-6">
+      <div class="text-center">
+        <!-- Avatar -->
+        <div class="mx-auto w-20 h-20 mb-4">
+          <img 
+            :src="avatarUrl" 
+            alt="User Avatar"
+            class="w-full h-full rounded-full object-cover border-2 border-slate-600"
+          />
+        </div>
+        
+        <!-- Country Flag -->
+        <img 
+          v-if="flagUrl" 
+          :src="flagUrl" 
+          alt="Country Flag"
+          class="absolute top-4 right-4 w-6 h-4 rounded border border-slate-600"
+        />
+        
+        <!-- Name -->
+        <h2 class="text-lg font-semibold text-white mb-2">
+          {{ name || "Anonymous" }}
+        </h2>
+        
+        <!-- Status -->
+        <div class="flex items-center justify-center space-x-2 text-sm text-slate-300">
+          <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+          <span>Active Developer</span>
+        </div>
       </div>
     </div>
-    <div class="Group2 w-[245px] h-[150px] left-[77px] top-[360px] absolute">
-      <div class="PublicRepos w-[220px] h-[50px] left-0 top-[100px] absolute text-[#000000] text-[20px] font-normal">
-        <span>Public Repos: <span>{{ publicRepos || "Not provided" }}</span></span>
-      </div>
-      <div class="Following w-[220px] h-[50px] left-0 top-[50px] absolute text-[#000000] text-[20px] font-normal">
-        <span>Following: <span>{{ following || "Not provided" }}</span></span>
-      </div>
-      <div class="Followers w-[220px] h-[50px] left-0 top-0 absolute text-[#000000] text-[20px] font-normal">
-        <span>Followers: <span>{{ followers || "Not provided" }}</span></span>
+
+    <!-- Stats Cards Grid -->
+    <div class="px-4 mb-4">
+      <div class="grid grid-cols-2 gap-3">
+        <!-- Followers Card -->
+        <div class="bg-slate-800 border border-slate-700 rounded-lg p-4 hover:bg-slate-750 transition-colors">
+          <div class="text-center">
+            <div class="text-xl font-semibold text-blue-400 mb-1">{{ followers || 0 }}</div>
+            <div class="text-xs text-slate-400 uppercase">Followers</div>
+          </div>
+        </div>
+        
+        <!-- Following Card -->
+        <div class="bg-slate-800 border border-slate-700 rounded-lg p-4 hover:bg-slate-750 transition-colors">
+          <div class="text-center">
+            <div class="text-xl font-semibold text-blue-400 mb-1">{{ following || 0 }}</div>
+            <div class="text-xs text-slate-400 uppercase">Following</div>
+          </div>
+        </div>
+        
+        <!-- Repos Card -->
+        <div class="bg-slate-800 border border-slate-700 rounded-lg p-4 hover:bg-slate-750 transition-colors">
+          <div class="text-center">
+            <div class="text-xl font-semibold text-blue-400 mb-1">{{ publicRepos || 0 }}</div>
+            <div class="text-xs text-slate-400 uppercase">Repositories</div>
+          </div>
+        </div>
+        
+        <!-- Years Card -->
+        <div class="bg-slate-800 border border-slate-700 rounded-lg p-4 hover:bg-slate-750 transition-colors">
+          <div class="text-center">
+            <div class="text-xl font-semibold text-blue-400 mb-1">{{ membershipYears }}</div>
+            <div class="text-xs text-slate-400 uppercase">Years</div>
+          </div>
+        </div>
       </div>
     </div>
-    <div
-      class="MembershipYears w-[280px] h-[50px] border-2 border-[#14213d] left-[6px] top-[450px] absolute rounded-[9px] text-[#000000] text-[20px] font-normal flex items-center justify-center">
-      <span>Membership: <span id="1000">{{ membershipYears }}</span> Years</span>
+
+    <!-- Membership Card -->
+    <div class="mx-4 mb-4">
+      <div class="bg-blue-900 border border-blue-800 rounded-lg p-5">
+        <div class="text-center">
+          <div class="text-sm text-blue-300 font-medium mb-2">GitHub Member</div>
+          <div class="text-white text-lg font-semibold">Since {{ joinYear }}</div>
+          <div class="text-blue-200 text-sm mt-1">{{ membershipYears }} years of coding</div>
+        </div>
+      </div>
     </div>
+
   </aside>
 </template>
 
@@ -41,7 +93,7 @@ export default {
   computed: {
     ...mapState(['userProfile']),
     avatarUrl() {
-      return this.userProfile?.avatar_url || '';
+      return this.userProfile?.avatar_url || '/placeholder.svg?height=96&width=96';
     },
     name() {
       return this.userProfile?.name || this.userProfile?.login || '';
@@ -61,15 +113,21 @@ export default {
       const currentDate = moment();
       return currentDate.diff(joinDate, 'years');
     },
+    joinYear() {
+      if (!this.userProfile?.created_at) return '';
+      return moment(this.userProfile.created_at).format('YYYY');
+    },
     flagUrl() {
       return this.userProfile?.flagUrl || '';
+    },
+    lastUpdated() {
+      return moment().format('MMM DD, HH:mm');
     },
   },
   methods: {
     ...mapActions(['fetchUserProfile']),
   },
   watch: {
-    // Watch for changes in sidebarUser to fetch new profile
     $store: {
       handler(newStore) {
         if (newStore.sidebarUser) {
@@ -80,7 +138,6 @@ export default {
     },
   },
   created() {
-    // Fetch profile on load
     if (this.$store.state.sidebarUser) {
       this.fetchUserProfile(this.$store.state.sidebarUser);
     }
@@ -89,4 +146,32 @@ export default {
 </script>
 
 <style scoped>
+/* Updated animations for new design */
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-ping {
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .3;
+  }
+}
+
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+  0%, 25% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 </style>
