@@ -1,5 +1,5 @@
 <template>
-  <aside class="w-80 h-full bg-slate-900 border-r border-slate-700 flex flex-col overflow-y-auto">
+  <aside class="w-80  bg-slate-900 border-r border-slate-700 flex flex-col overflow-y-auto">
     <!-- Header Card -->
     <div class="m-4 bg-slate-800 rounded-lg border border-slate-700 p-6">
       <div class="text-center">
@@ -80,6 +80,7 @@
         </div>
       </div>
     </div>
+
 
   </aside>
 </template>
