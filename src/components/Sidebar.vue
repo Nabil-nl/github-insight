@@ -25,11 +25,6 @@
           {{ name || "Anonymous" }}
         </h2>
         
-        <!-- Status -->
-        <div class="flex items-center justify-center space-x-2 text-sm text-slate-300">
-          <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-          <span>Active Developer</span>
-        </div>
       </div>
     </div>
 
@@ -146,33 +141,3 @@ export default {
 };
 </script>
 
-<style scoped>
-/* Updated animations for new design */
-.animate-pulse {
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-.animate-ping {
-  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
-}
-
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: .3;
-  }
-}
-
-@keyframes ping {
-  75%, 100% {
-    transform: scale(2);
-    opacity: 0;
-  }
-  0%, 25% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-</style>
