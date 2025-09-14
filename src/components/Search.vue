@@ -7,7 +7,7 @@
           type="search"
           v-model="query"
           id="default-search"
-          class="block w-full placeholder-black p-4 ps-10 text-[1rem] bg-[#161b22] text-black  rounded-lg border-2 border-[#30363d]"
+          class="block w-full placeholder-[#48525d] p-4 ps-10 text-[1rem] bg-[#161b22] text-white  rounded-lg border-2 border-[#30363d]"
           placeholder="Search ..."
           required
         />
