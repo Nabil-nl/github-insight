@@ -1,14 +1,14 @@
 <template>
-  <aside class="w-80 h-screen bg-slate-900 border-r border-slate-700 flex flex-col overflow-y-auto">
+  <aside class="w-80 h-screen bg-[#0d1117] border-r border-[#30363d] flex flex-col overflow-y-auto">
     <!-- Header Card -->
-    <div class="m-4 bg-slate-800 rounded-lg border border-slate-700 p-6">
+    <div class="m-4 bg-[#161b22] rounded-lg border border-[#30363d] p-6">
       <div class="text-center">
         <!-- Avatar -->
         <div class="mx-auto w-20 h-20 mb-4">
           <img 
             :src="avatarUrl" 
             alt="User Avatar"
-            class="w-full h-full rounded-full object-cover border-2 border-slate-600"
+            class="w-full h-full rounded-full object-cover border-2 border-[#30363d]"
           />
         </div>
         
@@ -17,11 +17,11 @@
           v-if="flagUrl" 
           :src="flagUrl" 
           alt="Country Flag"
-          class="absolute top-4 right-4 w-6 h-4 rounded border border-slate-600"
+          class="absolute top-4 right-4 w-6 h-4 rounded border border-[#30363d]"
         />
         
         <!-- Name -->
-        <h2 class="text-lg font-semibold text-white mb-2">
+        <h2 class="text-lg font-semibold text-[#f0f6fc] mb-2">
           {{ name || "Anonymous" }}
         </h2>
         
@@ -32,34 +32,34 @@
     <div class="px-4 mb-4">
       <div class="grid grid-cols-2 gap-3">
         <!-- Followers Card -->
-        <div class="bg-slate-800 border border-slate-700 rounded-lg p-4 hover:bg-slate-750 transition-colors">
+        <div class="bg-[#161b22] border border-[#30363d] rounded-lg p-4 hover:bg-[#21262d] transition-colors cursor-pointer">
           <div class="text-center">
-            <div class="text-xl font-semibold text-blue-400 mb-1">{{ followers || 0 }}</div>
-            <div class="text-xs text-slate-400 uppercase">Followers</div>
+            <div class="text-xl font-semibold text-[#58a6ff] mb-1">{{ followers || 0 }}</div>
+            <div class="text-xs text-[#8b949e] uppercase tracking-wide">Followers</div>
           </div>
         </div>
         
         <!-- Following Card -->
-        <div class="bg-slate-800 border border-slate-700 rounded-lg p-4 hover:bg-slate-750 transition-colors">
+        <div class="bg-[#161b22] border border-[#30363d] rounded-lg p-4 hover:bg-[#21262d] transition-colors cursor-pointer">
           <div class="text-center">
-            <div class="text-xl font-semibold text-blue-400 mb-1">{{ following || 0 }}</div>
-            <div class="text-xs text-slate-400 uppercase">Following</div>
+            <div class="text-xl font-semibold text-[#58a6ff] mb-1">{{ following || 0 }}</div>
+            <div class="text-xs text-[#8b949e] uppercase tracking-wide">Following</div>
           </div>
         </div>
         
         <!-- Repos Card -->
-        <div class="bg-slate-800 border border-slate-700 rounded-lg p-4 hover:bg-slate-750 transition-colors">
+        <div class="bg-[#161b22] border border-[#30363d] rounded-lg p-4 hover:bg-[#21262d] transition-colors cursor-pointer">
           <div class="text-center">
-            <div class="text-xl font-semibold text-blue-400 mb-1">{{ publicRepos || 0 }}</div>
-            <div class="text-xs text-slate-400 uppercase">Repositories</div>
+            <div class="text-xl font-semibold text-[#58a6ff] mb-1">{{ publicRepos || 0 }}</div>
+            <div class="text-xs text-[#8b949e] uppercase tracking-wide">Repositories</div>
           </div>
         </div>
         
         <!-- Years Card -->
-        <div class="bg-slate-800 border border-slate-700 rounded-lg p-4 hover:bg-slate-750 transition-colors">
+        <div class="bg-[#161b22] border border-[#30363d] rounded-lg p-4 hover:bg-[#21262d] transition-colors cursor-pointer">
           <div class="text-center">
-            <div class="text-xl font-semibold text-blue-400 mb-1">{{ membershipYears }}</div>
-            <div class="text-xs text-slate-400 uppercase">Years</div>
+            <div class="text-xl font-semibold text-[#58a6ff] mb-1">{{ membershipYears }}</div>
+            <div class="text-xs text-[#8b949e] uppercase tracking-wide">Years</div>
           </div>
         </div>
       </div>
@@ -67,11 +67,11 @@
 
     <!-- Membership Card -->
     <div class="mx-4 mb-4">
-      <div class="bg-blue-900 border border-blue-800 rounded-lg p-5">
+      <div class="bg-[#0969da] border border-[#1f6feb] rounded-lg p-5">
         <div class="text-center">
-          <div class="text-sm text-blue-300 font-medium mb-2">GitHub Member</div>
+          <div class="text-sm text-[#cae8ff] font-medium mb-2">GitHub Member</div>
           <div class="text-white text-lg font-semibold">Since {{ joinYear }}</div>
-          <div class="text-blue-200 text-sm mt-1">{{ membershipYears }} years of coding</div>
+          <div class="text-[#cae8ff] text-sm mt-1">{{ membershipYears }} years of coding</div>
         </div>
       </div>
     </div>
@@ -84,7 +84,7 @@ import { mapState, mapActions } from 'vuex';
 import moment from 'moment';
 
 export default {
-  name: 'Sidebar',
+  name: 'GitHubSidebar',
   computed: {
     ...mapState(['userProfile']),
     avatarUrl() {
@@ -139,4 +139,3 @@ export default {
   },
 };
 </script>
-
