@@ -1,13 +1,13 @@
 <template>
   <div>
     <!-- Search Form -->
-    <form @submit.prevent="performSearch" class="fixed left-[660px] top-[3.5rem] mr-4 mt-4 w-[500px]">
+    <form @submit.prevent="performSearch" class="fixed   left-[660px] top-[3.5rem] mr-4 mt-4 w-[500px]">
       <div class="relative">
         <input
           type="search"
           v-model="query"
           id="default-search"
-          class="block w-full placeholder-black p-4 ps-10 text-[1rem] text-black  rounded-lg border-2 border-[#14213d]"
+          class="block w-full placeholder-black p-4 ps-10 text-[1rem] bg-[#161b22] text-black  rounded-lg border-2 border-[#30363d]"
           placeholder="Search ..."
           required
         />
