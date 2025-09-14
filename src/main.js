@@ -3,7 +3,6 @@ import App from './App.vue';
 import store from './store';
 import './assets/style.css';
 import '@/css/out.css';
-import '@/css/header.css';
 
 
 function setFavicon(url) {

@@ -63,7 +63,6 @@ import { mapState, mapActions } from 'vuex';
 import Card from './Card.vue';
 import Card2 from './Card2.vue';
 import { debounce } from 'lodash';
-import '@/css/header.css';
 
 export default {
   name: 'Search',

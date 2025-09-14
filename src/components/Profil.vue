@@ -13,7 +13,6 @@
 </template>
 
 <script>
-import '@/css/header.css'
 import { mapState } from 'vuex';
 
 export default {
