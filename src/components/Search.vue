@@ -15,14 +15,14 @@
     </form>
 
     <!-- User List -->
-    <div id="all" v-if="showUserList" class="container fixed left-[660px] top-[8rem] mr-4 mt-4 w-[500px] rounded-lg border-2 border-[#14213d]">
-      <div id="searchResults" class="w-[490px] text-[#00a8e8]">
+    <div id="all" v-if="showUserList" class="container fixed left-[660px] top-[8rem] mr-4 mt-4 w-[500px] rounded-lg border-2 bg-[#161b22] border-[#161b22]">
+      <div id="searchResults" class="w-[490px] text-white">
         <div v-if="searchPerformed">
           <div v-if="users.length" class="p-4">
             <h2 class="text-lg font-bold mb-4">GitHub Users</h2>
             <ul>
               <li v-for="user in users" :key="user.id" class="mb-2">
-                <a href="#" @click.prevent="fetchUserRepos(user.login)" class="hover:text-[#00a8e8] text-[#000000]">{{ user.login }}</a>
+                <a href="#" @click.prevent="fetchUserRepos(user.login)" class="hover:text-[#00a8e8] text-white">{{ user.login }}</a>
               </li>
             </ul>
           </div>
