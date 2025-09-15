@@ -1,5 +1,5 @@
 <template>
-  <section v-if="userName" class="fixed left-[400px] w-[900px] h-[550px] bottom-[50px] mr-4 mt-4 bg-[#ffffff] rounded-lg border-2 border-[#14213d] shadow-lg p-4 flex flex-col">
+  <section v-if="userName" class="fixed left-[400px] w-[900px] h-[550px] bottom-[50px] mr-4 mt-4 bg-[#161b22] rounded-lg border-2 border-[#30363d] shadow-lg p-4 flex flex-col">
     <Profil :profile="userProfile" />
     <Chart1 :userData="userData" />
 
