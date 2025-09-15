@@ -19,10 +19,10 @@
       <div id="searchResults" class="w-[490px] text-white">
         <div v-if="searchPerformed">
           <div v-if="users.length" class="p-4">
-            <h2 class="text-lg font-bold mb-4">GitHub Users</h2>
+            <h2 class="text-lg font-bold mb-4 font-sans">GitHub Users</h2>
             <ul>
               <li v-for="user in users" :key="user.id" class="mb-2">
-                <a href="#" @click.prevent="fetchUserRepos(user.login)" class="hover:text-[#00a8e8] text-white">{{ user.login }}</a>
+                <a href="#" @click.prevent="fetchUserRepos(user.login)" class="hover:text-[#56d364] text-white font-mono">{{ user.login }}</a>
               </li>
             </ul>
           </div>
