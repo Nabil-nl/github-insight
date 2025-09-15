@@ -44,14 +44,14 @@
 
     <!-- Button to show more content -->
     <div v-if="!showUserList && currentCard === 'repositories' && repositories.length" class="fixed bottom-4 right-4 z-50 flex justify-center">
-      <button id="add" @click="showMoreRepositories" class="px-4 py-2 bg-[#e5e5e5] text-black  rounded-lg border-2 border-[#9fa3a6]">
+      <button id="add" @click="showMoreRepositories" class="px-4 py-2 bg-[#161b22] text-white font-mono rounded-lg border-2 border-[#56d364]">
         Show more ..
       </button>
     </div>
 
     <!-- Button to switch back to repositories -->
     <div v-if="currentCard === 'userStats'" class="fixed bottom-4 right-4 z-50 flex justify-center">
-      <button id="add" @click="showLessRepositories" class="px-4 py-2 bg-[#e5e5e5] text-black  rounded-lg border-2 border-[#9fa3a6]">
+      <button id="add" @click="showLessRepositories" class="px-4 py-2 bg-[#161b22] text-white  rounded-lg border-2 border-[#56d364]">
         Show Repos
       </button>
     </div>
