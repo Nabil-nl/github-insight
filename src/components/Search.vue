@@ -15,7 +15,7 @@
     </form>
 
     <!-- User List -->
-    <div id="all" v-if="showUserList" class="container fixed left-[660px] top-[8rem] mr-4 mt-4 w-[500px] rounded-lg border-2 bg-[#161b22] border-[#161b22]">
+    <div id="all" v-if="showUserList" class="container  left-[660px] top-[8rem] mr-4 mt-4 w-[500px] rounded-lg border-2 bg-[#161b22] border-[#161b22]">
       <div id="searchResults" class="w-[490px] text-white">
         <div v-if="searchPerformed">
           <div v-if="users.length" class="p-4">
