@@ -34,7 +34,7 @@
         <!-- Followers Card -->
         <div class="bg-[#161b22] border border-[#30363d] rounded-lg p-4 hover:bg-[#21262d] transition-colors cursor-pointer">
           <div class="text-center">
-            <div class="text-xl font-semibold text-[#58a6ff] mb-1">{{ followers || 0 }}</div>
+            <div class="text-xl font-semibold text-[#56d364] mb-1">{{ followers || 0 }}</div>
             <div class="text-xs text-[#8b949e] uppercase tracking-wide">Followers</div>
           </div>
         </div>
@@ -42,7 +42,7 @@
         <!-- Following Card -->
         <div class="bg-[#161b22] border border-[#30363d] rounded-lg p-4 hover:bg-[#21262d] transition-colors cursor-pointer">
           <div class="text-center">
-            <div class="text-xl font-semibold text-[#58a6ff] mb-1">{{ following || 0 }}</div>
+            <div class="text-xl font-semibold text-[#56d364] mb-1">{{ following || 0 }}</div>
             <div class="text-xs text-[#8b949e] uppercase tracking-wide">Following</div>
           </div>
         </div>
@@ -50,7 +50,7 @@
         <!-- Repos Card -->
         <div class="bg-[#161b22] border border-[#30363d] rounded-lg p-4 hover:bg-[#21262d] transition-colors cursor-pointer">
           <div class="text-center">
-            <div class="text-xl font-semibold text-[#58a6ff] mb-1">{{ publicRepos || 0 }}</div>
+            <div class="text-xl font-semibold text-[#56d364] mb-1">{{ publicRepos || 0 }}</div>
             <div class="text-xs text-[#8b949e] uppercase tracking-wide">Repositories</div>
           </div>
         </div>
@@ -58,7 +58,7 @@
         <!-- Years Card -->
         <div class="bg-[#161b22] border border-[#30363d] rounded-lg p-4 hover:bg-[#21262d] transition-colors cursor-pointer">
           <div class="text-center">
-            <div class="text-xl font-semibold text-[#58a6ff] mb-1">{{ membershipYears }}</div>
+            <div class="text-xl font-semibold text-[#56d364] mb-1">{{ membershipYears }}</div>
             <div class="text-xs text-[#8b949e] uppercase tracking-wide">Years</div>
           </div>
         </div>
@@ -67,11 +67,11 @@
 
     <!-- Membership Card -->
     <div class="mx-4 mb-4">
-      <div class="bg-[#0969da] border border-[#1f6feb] rounded-lg p-5">
+      <div class="bg-[#161b22] border border-[#30363d] rounded-lg p-5">
         <div class="text-center">
-          <div class="text-sm text-[#cae8ff] font-medium mb-2">GitHub Member</div>
-          <div class="text-white text-lg font-semibold">Since {{ joinYear }}</div>
-          <div class="text-[#cae8ff] text-sm mt-1">{{ membershipYears }} years of coding</div>
+          <div class="text-sm text-white font-mono mb-2">GitHub Member</div>
+          <div class="text-[#56d364] text-lg font-mono">Since {{ joinYear }}</div>
+          <div class="text-[#8b949e] text-sm font-mono mt-1">{{ membershipYears }} years of coding</div>
         </div>
       </div>
     </div>
