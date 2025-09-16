@@ -15,8 +15,8 @@
     </form>
 
     <!-- User List -->
-    <div id="all" v-if="showUserList" class="container fixed left-[660px] top-[8rem] mr-4 mt-4 w-[500px] rounded-lg border-2 bg-[#161b22] border-[#161b22]">
-      <div id="searchResults" class="w-[490px] text-white">
+    <div id="all" v-if="showUserList" class="container fixed left-[660px] top-[8rem] mr-4 mt-4 w-[500px] max-h-[400px] rounded-lg border-2 bg-[#161b22] border-[#161b22] overflow-hidden">
+      <div id="searchResults" class="w-[490px] text-white max-h-[400px] overflow-y-auto scrollbar-thin scrollbar-thumb-[#30363d] scrollbar-track-[#161b22] hover:scrollbar-thumb-[#56d364]">
         <div v-if="searchPerformed">
           <div v-if="users.length" class="p-4">
             <h2 class="text-lg font-bold mb-4 font-sans">GitHub Users</h2>
@@ -127,4 +127,3 @@ export default {
 
 <style scoped>
 </style>
-
