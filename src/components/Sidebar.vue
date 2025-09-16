@@ -12,13 +12,6 @@
           />
         </div>
         
-        <!-- Country Flag -->
-        <img 
-          v-if="flagUrl" 
-          :src="flagUrl" 
-          alt="Country Flag"
-          class="absolute top-4 right-4 w-6 h-4 rounded border border-[#30363d]"
-        />
         
         <!-- Name -->
         <h2 class="text-lg font-semibold text-[#f0f6fc] mb-2">
@@ -32,7 +25,7 @@
     <div class="px-4 mb-4">
       <div class="grid grid-cols-2 gap-3">
         <!-- Followers Card -->
-        <div class="bg-[#161b22] border border-[#30363d] rounded-lg p-4 hover:bg-[#21262d] transition-colors cursor-pointer">
+        <div class="bg-[#161b22] border border-[#30363d] rounded-lg p-4  transition-colors cursor-pointer">
           <div class="text-center">
             <div class="text-xl font-semibold text-[#56d364] mb-1">{{ followers || 0 }}</div>
             <div class="text-xs text-[#8b949e] uppercase tracking-wide">Followers</div>
@@ -40,7 +33,7 @@
         </div>
         
         <!-- Following Card -->
-        <div class="bg-[#161b22] border border-[#30363d] rounded-lg p-4 hover:bg-[#21262d] transition-colors cursor-pointer">
+        <div class="bg-[#161b22] border border-[#30363d] rounded-lg p-4  transition-colors cursor-pointer">
           <div class="text-center">
             <div class="text-xl font-semibold text-[#56d364] mb-1">{{ following || 0 }}</div>
             <div class="text-xs text-[#8b949e] uppercase tracking-wide">Following</div>
@@ -48,7 +41,7 @@
         </div>
         
         <!-- Repos Card -->
-        <div class="bg-[#161b22] border border-[#30363d] rounded-lg p-4 hover:bg-[#21262d] transition-colors cursor-pointer">
+        <div class="bg-[#161b22] border border-[#30363d] rounded-lg p-4  transition-colors cursor-pointer">
           <div class="text-center">
             <div class="text-xl font-semibold text-[#56d364] mb-1">{{ publicRepos || 0 }}</div>
             <div class="text-xs text-[#8b949e] uppercase tracking-wide">Repositories</div>
@@ -56,7 +49,7 @@
         </div>
         
         <!-- Years Card -->
-        <div class="bg-[#161b22] border border-[#30363d] rounded-lg p-4 hover:bg-[#21262d] transition-colors cursor-pointer">
+        <div class="bg-[#161b22] border border-[#30363d] rounded-lg p-4  transition-colors cursor-pointer">
           <div class="text-center">
             <div class="text-xl font-semibold text-[#56d364] mb-1">{{ membershipYears }}</div>
             <div class="text-xs text-[#8b949e] uppercase tracking-wide">Years</div>
