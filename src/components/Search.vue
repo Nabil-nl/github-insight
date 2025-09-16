@@ -29,7 +29,7 @@
           <!-- Display loading message while searching -->
           <div v-else-if="loading" class="p-4 text-[#00a8e8]">Wait..</div>
           <!-- Display message if no users are found after search completes -->
-          <div v-else class="p-4 text-[#ff3333]">
+          <div v-else class="p-4 font-mono  text-[#ff3333]">
             I don't find the users
           </div>
         </div>
@@ -92,7 +92,6 @@ export default {
       try {
         await this.debouncedSearch(this.query);
       } finally {
-        // Set loading to false after search completes (whether successful or not)
         this.loading = false;
       }
     },
