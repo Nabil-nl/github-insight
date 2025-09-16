@@ -2,7 +2,6 @@
 import { createStore } from 'vuex';
 import axios from 'axios';
 
-
 function getLanguageColor(lang) {
   const colors = {
     Assembly: '#6E4C13',
@@ -135,7 +134,6 @@ export default createStore({
           repositories.map(async (repo) => {
             // const languagesResponse = await axios.get(repo.languages_url);
              const languagesResponse = await axios.get(repo.languages_url, {
-          headers: { Authorization: `token ${GITHUB_TOKEN}` }
         });
             const languages = languagesResponse.data;
 
