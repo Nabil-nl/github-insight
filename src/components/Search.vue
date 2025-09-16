@@ -15,7 +15,7 @@
     </form>
 
     <!-- User List -->
-    <div id="all" v-if="showUserList" class="container  left-[660px] top-[8rem] mr-4 mt-4 w-[500px] rounded-lg border-2 bg-[#161b22] border-[#161b22]">
+    <div id="all" v-if="showUserList" class="container fixed left-[660px] top-[8rem] mr-4 mt-4 w-[500px] rounded-lg border-2 bg-[#161b22] border-[#161b22]">
       <div id="searchResults" class="w-[490px] text-white">
         <div v-if="searchPerformed">
           <div v-if="users.length" class="p-4">
@@ -51,7 +51,7 @@
 
     <!-- Button to switch back to repositories -->
     <div v-if="currentCard === 'userStats'" class="fixed bottom-4 right-4 z-50 flex justify-center">
-      <button id="add" @click="showLessRepositories" class="px-4 py-2 bg-[#161b22] text-white  rounded-lg border-2 border-[#56d364]">
+      <button id="add" @click="showLessRepositories" class="px-4 py-2 bg-[#161b22] text-white font-mono rounded-lg border-2 border-[#56d364]">
         Show Repos
       </button>
     </div>
